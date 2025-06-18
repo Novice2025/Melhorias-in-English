@@ -1,2 +1,3 @@
 # Melhorias-in-English
-Enhance, improve, optimise, boost, streamline, &amp; get better
+A guide to mastering improvement-related vocabulary in English by Teacher Daby.
+Visit the webpage at https://novice2025.github.io/Melhorias-in-English/
