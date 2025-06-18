@@ -1,0 +1,1576 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mastering 'Improve' and 'Improvement' in English</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #1C1C1C; /* Very dark background, almost black */
+            color: #DAA520; /* Golden color for text */
+        }
+        .nav-link {
+            transition: color 0.3s, border-bottom-color 0.3s;
+            border-bottom: 2px solid transparent;
+        }
+        .nav-link:hover, .nav-link.active {
+            color: #B22222; /* Blood Red */
+            border-bottom-color: #B22222; /* Blood Red */
+        }
+        .tab-button {
+            transition: all 0.3s;
+        }
+        .tab-button.active {
+            background-color: #B22222; /* Blood Red */
+            color: #ffffff;
+            font-weight: 600;
+        }
+        .content-section {
+            display: none;
+        }
+        .content-section.active {
+            display: block;
+        }
+        .highlight-word {
+            font-weight: 600;
+            color: #FFD700; /* Brighter Golden for highlights */
+        }
+        .summary-table th, .summary-table td {
+            padding: 0.75rem;
+            border: 1px solid #4F5D73; /* Darker slate for borders */
+            text-align: left;
+        }
+        .summary-table th {
+            background-color: #4F5D73; /* Darker slate for table header */
+            font-weight: 600;
+            color: #FFD700; /* Golden text for header */
+        }
+        
+        main section {
+            background-color: rgba(30, 30, 30, 0.95); /* Section background darker and slightly transparent */
+            position: relative;
+            z-index: 1;
+        }
+        .bg-gray-50 {
+            background-color: rgba(45, 45, 45, 0.95); /* Lighter gray for contrast */
+        }
+        .bg-gray-100 {
+            background-color: rgba(55, 55, 55, 0.95); /* Another shade of gray */
+        }
+        .bg-white {
+             background-color: rgba(25, 25, 25, 0.9); /* Darker base for content boxes */
+        }
+        
+        h1.text-gray-800, h2.text-gray-800, h3.text-gray-800 {
+            color: #B22222; /* Blood Red for headlines */
+        }
+        .text-gray-600 { 
+            color: #DAA520; /* Golden for general wording */
+        }
+        .text-gray-700 { 
+            color: #DAA520; /* Golden */
+        }
+        .text-gray-800 { 
+            color: #FFD700; /* Brighter Golden */
+        }
+
+        .golden-text {
+            color: #FFD700; /* Brighter Golden */
+        }
+
+        .portuguese-box {
+            border: 2px solid #B22222; /* Blood Red border */
+            border-radius: 0.75rem; /* Rounded corners */
+            padding: 1.5rem; /* P-6 */
+            margin-top: 2rem; /* mt-8 */
+            background-color: #4F5D73; /* Darker slate background for box */
+            color: #FFD700; /* Brighter Golden text */
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+        }
+        .portuguese-box h3 {
+            color: #B22222; /* Blood Red for Portuguese box title */
+        }
+        .portuguese-box p, .portuguese-box ul li {
+             color: #FFD700; /* Golden text for Portuguese box content */
+        }
+
+        .exercise-answer {
+            background-color: #2F4F4F; /* Dark Slate Gray for answers */
+            border-left: 4px solid #32CD32; /* Lime Green border for answers (readable contrast) */
+            padding: 1rem;
+            margin-top: 1rem;
+            border-radius: 0.5rem;
+            color: #FFFFFF; /* White text for answers */
+        }
+        .text-blue-600 { /* For details/summary links in exercises */
+            color: #B22222; /* Blood Red for links */
+        }
+        .text-blue-500 { /* For loading indicator */
+            color: #B22222; /* Blood Red */
+        }
+        .text-red-500 { /* For error messages */
+            color: #FFD700; /* Golden for error messages (stands out) */
+        }
+
+        /* Styles for the probability timeline section */
+        .timeline-section-container {
+            background-color: rgba(25, 25, 25, 0.9); /* Darker base for content boxes */
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.5);
+            width: 100%;
+            max-width: 800px;
+            text-align: center;
+            margin: 0 auto; 
+        }
+        .timeline-section-container h2 {
+            color: #B22222; 
+            font-size: 2.25rem; 
+            font-weight: 700; 
+            margin-bottom: 1.5rem;
+        }
+        .timeline-section-container p {
+            color: #32CD32; /* Vibrant Green */
+            font-size: 1.125rem; 
+            margin-bottom: 2rem;
+        }
+        .timeline-container-inner { 
+            position: relative;
+            width: 90%;
+            height: 60px; 
+            background: linear-gradient(to right, #4F5D73, #6B7C8F); 
+            border-radius: 5px;
+            margin: 2rem auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between; 
+            padding: 0 5%; 
+            box-sizing: border-box;
+        }
+        .timeline-marker { 
+            position: absolute;
+            top: 50%;
+            transform: translate(-50%, -50%);
+            width: 12px; 
+            height: 12px;
+            background-color: #B22222; 
+            border-radius: 50%;
+            z-index: 10;
+        }
+        .timeline-marker-label { 
+            position: absolute;
+            top: -35px; 
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-weight: 600;
+            color: #32CD32; /* Vibrant Green */
+            font-size: 0.9rem;
+            text-align: center;
+            padding-bottom: 5px; 
+        }
+        .timeline-description-label { 
+            position: absolute;
+            bottom: -35px; 
+            left: 50%;
+            transform: translateX(-50%);
+            white-space: nowrap;
+            font-size: 0.8rem;
+            color: #32CD32; /* Vibrant Green */
+            text-align: center;
+            padding-top: 5px; 
+        }
+
+        .timeline-marker.left-position { 
+            left: 20%; 
+        }
+        .timeline-marker.right-position { 
+            left: 80%; 
+        }
+        
+        .timeline-level-label { 
+            position: absolute;
+            top: 50%;
+            transform: translateY(-50%);
+            font-weight: 600;
+            color: #32CD32; /* Vibrant Green */
+            font-size: 0.8rem;
+        }
+        .timeline-level-label.low {
+            left: -30px; 
+        }
+        .timeline-level-label.high {
+            right: -30px; 
+        }
+
+        @media (max-width: 640px) {
+            .timeline-section-container h2 {
+                font-size: 1.75rem;
+            }
+            .timeline-section-container p {
+                font-size: 1rem;
+            }
+            .timeline-container-inner {
+                height: 80px; 
+            }
+            .timeline-marker-label {
+                top: -45px; 
+                font-size: 0.8rem;
+            }
+            .timeline-description-label {
+                bottom: -45px; 
+                font-size: 0.7rem;
+            }
+            .timeline-level-label.low {
+                left: -20px;
+            }
+            .timeline-level-label.high {
+                right: -20px;
+            }
+        }
+
+    </style>
+</head>
+<body class="text-gray-700">
+
+    <header class="bg-white/90 backdrop-blur-md sticky top-0 z-50 shadow-sm">
+        <nav class="container mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex items-center justify-between h-16">
+                <div class="flex-shrink-0">
+                    <h1 class="text-xl font-bold text-gray-800">Guide to 'Improve' and 'Improvement' in English - Teacher Daby</h1>
+                </div>
+                <div class="hidden md:block">
+                    <div class="ml-10 flex items-baseline space-x-4">
+                        <a href="#table-of-contents" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Table of Contents</a>
+                        <a href="#intro" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Introduction</a>
+                        <a href="#core-uses" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Essential Uses</a>
+                        <a href="#graph-illustration" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Improve vs. Increase</a>
+                        <a href="#collocations" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Collocations (Increase)</a>
+                        <a href="#boost-explanation" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Understanding 'Boost'</a>
+                        <a href="#boost-up-explanation" class="nav-link px-3 py-2 rounded-md text-sm font-medium">What is 'Boost Up'?</a>
+                        <a href="#boost-real-world" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Boost Daily Use</a>
+                        <a href="#boost-collocations" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Collocations (Boost)</a>
+                        <a href="#enhance-real-world" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Enhance Daily Use</a>
+                        <a href="#enhance-collocations" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Collocations (Enhance)</a>
+                        <a href="#optimize-real-world" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Optimize Daily Use</a>
+                        <a href="#optimize-collocations" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Collocations (Optimize)</a>
+                        <a href="#streamline-real-world" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Streamline Daily Use</a>
+                        <a href="#streamline-collocations" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Collocations (Streamline)</a>
+                        <a href="#verb-comparison-table-section" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Verb Comparison</a>
+                        <a href="#get-better-real-world" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Get Better Daily Use</a>
+                        <a href="#get-better-collocations" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Collocations (Get Better)</a>
+                        <a href="#real-world" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Improve Daily Use</a>
+                        <a href="#improve-collocations" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Collocations (Improve)</a>
+                        <a href="#llm-feature" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Sentence Enhancer ✨</a>
+                        <a href="#summary" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Summary</a>
+                        <a href="#exercises" class="nav-link px-3 py-2 rounded-md text-sm font-medium">Exercises ✍️</a>
+                    </div>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main class="container mx-auto px-4 sm:px-6 lg:px-8 py-8 md:py-12">
+        
+        <section id="table-of-contents" class="py-12 md:py-20 bg-gray-100 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Table of Contents 📚</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Quickly jump to any section of this comprehensive guide to mastering improvement-related vocabulary!</p>
+            </div>
+            <div class="max-w-3xl mx-auto bg-white p-6 rounded-lg shadow-md">
+                <ol class="list-decimal list-inside space-y-2 text-gray-700 text-lg">
+                    <li><a href="#intro" class="text-blue-600 hover:underline">Introduction</a></li>
+                    <li><a href="#core-uses" class="text-blue-600 hover:underline">Essential Uses: Verb 'Improve' and Noun 'Improvement'</a></li>
+                    <li><a href="#graph-illustration" class="text-blue-600 hover:underline">Understanding 'Improve' vs. 'Increase' Visually</a></li>
+                    <li><a href="#collocations" class="text-blue-600 hover:underline">Collocations with 'Increase'</a></li>
+                    <li><a href="#boost-explanation" class="text-blue-600 hover:underline">Understanding 'Boost'</a></li>
+                    <li><a href="#boost-up-explanation" class="text-blue-600 hover:underline">What is 'Boost Up'?</a></li>
+                    <li><a href="#boost-real-world" class="text-blue-600 hover:underline">In Daily Life: Practical Examples of 'Boost' & 'Boost Up'</a></li>
+                    <li><a href="#boost-collocations" class="text-blue-600 hover:underline">Collocations with 'Boost'</a></li>
+                    <li><a href="#enhance-real-world" class="text-blue-600 hover:underline">In Daily Life: Practical Examples of 'Enhance' & 'Enhancement'</a></li>
+                    <li><a href="#enhance-collocations" class="text-blue-600 hover:underline">Collocations with 'Enhance'</a></li>
+                    <li><a href="#optimize-real-world" class="text-blue-600 hover:underline">In Daily Life: Practical Examples of 'Optimize' & 'Optimization'</a></li>
+                    <li><a href="#optimize-collocations" class="text-blue-600 hover:underline">Collocations with 'Optimize'</a></li>
+                    <li><a href="#streamline-real-world" class="text-blue-600 hover:underline">In Daily Life: Practical Examples of 'Streamline' & 'Streamlining'</a></li>
+                    <li><a href="#streamline-collocations" class="text-blue-600 hover:underline">Collocations with 'Streamline'</a></li>
+                    <li><a href="#verb-comparison-table-section" class="text-blue-600 hover:underline">Comparative Guide to Improvement Verbs</a></li>
+                    <li><a href="#get-better-real-world" class="text-blue-600 hover:underline">In Daily Life: Practical Examples of 'Get Better'</a></li>
+                    <li><a href="#get-better-collocations" class="text-blue-600 hover:underline">Collocations with 'Get Better'</a></li>
+                    <li><a href="#real-world" class="text-blue-600 hover:underline">In Daily Life: Practical Examples of 'Improve' & 'Improvement'</a></li>
+                    <li><a href="#improve-collocations" class="text-blue-600 hover:underline">Collocations with 'Improve'</a></li>
+                    <li><a href="#llm-feature" class="text-blue-600 hover:underline">Sentence Enhancer ✨</a></li>
+                    <li><a href="#summary" class="text-blue-600 hover:underline">Importance of 'Improve' and 'Improvement' in Communication</a></li>
+                    <li><a href="#exercises" class="text-blue-600 hover:underline">Exercises: Test your knowledge!</a></li>
+                </ol>
+            </div>
+        </section>
+
+        <section id="intro" class="text-center py-12 md:py-20">
+            <h2 class="text-3xl md:text-5xl font-bold text-gray-800 tracking-tight">"Melhoras" in English: 'Improve' and 'Increase' are just the beginning! 🚀</h2>
+            <p class="mt-4 max-w-3xl mx-auto text-lg md:text-xl text-gray-600 golden-text">The words 'improve' and 'improvement' are fundamental for expressing progress, advancement, and the pursuit of excellence in English. Understanding their correct usage enriches your communication in various contexts.</p>
+            <p class="mt-2 max-w-3xl mx-auto text-lg md:text-xl text-gray-600 golden-text"> 'Improve' and 'increase' are basic and essential terms, but mastering their nuances and other more sophisticated synonyms is crucial for professional and precise communication. </p>
+        </section>
+
+        <section id="core-uses" class="py-12 md:py-20 bg-gray-50 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Essential Uses: Verb 'Improve' and Noun 'Improvement' 💡</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">While 'improve' is a verb indicating the action of making something better, 'improvement' is the noun referring to the act of improving or the result of that action.</p>
+            </div>
+
+            <div class="grid md:grid-cols-2 gap-8 max-w-6xl mx-auto">
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">Using <span class="highlight-word">'Improve'</span> (Verb) ✅</h3>
+                    <p class="mb-4">Indicates the action of making something better, enhancing, or evolving.</p>
+                    <h4 class="font-bold text-gray-800 mb-2">Examples:</h4>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>We need to <span class="highlight-word">improve</span> our customer service. (Precisamos melhorar nosso atendimento ao cliente.) 🗣️</li>
+                        <li>Her English has <span class="highlight-word">improved</span> significantly. (O inglês dela melhorou significativamente.) 📈</li>
+                        <li>This software update will <span class="highlight-word">improve</span> performance. (Esta atualização de software vai melhorar o desempenho.) 💻</li>
+                    </ul>
+                </div>
+
+                <div class="bg-white p-6 rounded-lg shadow-md">
+                    <h3 class="text-2xl font-semibold text-blue-600 mb-4">Using <span class="highlight-word">'Improvement'</span> (Noun) 🤔</h3>
+                    <p class="mb-4">Refers to a betterment, an advancement, or the act of enhancing something.</p>
+                    <h4 class="font-bold text-gray-800 mb-2">Examples:</h4>
+                    <ul class="list-disc list-inside space-y-2 text-gray-700">
+                        <li>There has been a steady <span class="highlight-word">improvement</span> in sales. (Houve uma melhoria constante nas vendas.) 📊</li>
+                        <li>We are looking for continuous <span class="highlight-word">improvement</span> in our processes. (Estamos buscando melhoria contínua em nossos processos.) 🔄</li>
+                        <li>His health showed a remarkable <span class="highlight-word">improvement</span>. (A saúde dele mostrou uma melhoria notável.) ❤️‍🩹</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="graph-illustration" class="py-12 md:py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Understanding 'Improve' vs. 'Increase' Visually 📈</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600 golden-text">While both relate to betterment, 'improve' focuses on quality and function, while 'increase' focuses on quantity and amount. </p>
+            </div>
+            <div class="max-w-2xl mx-auto bg-white p-6 rounded-xl shadow-lg flex flex-col items-center justify-center space-y-8">
+                <!-- SVG Illustration -->
+                <svg width="100%" height="200" viewBox="0 0 600 200" class="max-w-full">
+                    <defs>
+                        <linearGradient id="gradImprove" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#FFD700;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#B22222;stop-opacity:1" />
+                        </linearGradient>
+                        <linearGradient id="gradIncrease" x1="0%" y1="0%" x2="100%" y2="0%">
+                            <stop offset="0%" style="stop-color:#32CD32;stop-opacity:1" />
+                            <stop offset="100%" style="stop-color:#DAA520;stop-opacity:1" />
+                        </linearGradient>
+                    </defs>
+
+                    <!-- Background grid -->
+                    <line x1="100" y1="180" x2="500" y2="180" stroke="#4F5D73" stroke-width="1" />
+                    <line x1="100" y1="130" x2="500" y2="130" stroke="#4F5D73" stroke-width="1" stroke-dasharray="2 2" />
+                    <line x1="100" y1="80" x2="500" y2="80" stroke="#4F5D73" stroke-width="1" stroke-dasharray="2 2" />
+                    <line x1="100" y1="30" x2="500" y2="30" stroke="#4F5D73" stroke-width="1" />
+
+                    <!-- IMPROVE graph -->
+                    <polyline points="100,150 200,100 300,50 400,100 500,50" fill="none" stroke="url(#gradImprove)" stroke-width="4" stroke-linecap="round" stroke-linejoin="round" />
+                    <text x="300" y="25" text-anchor="middle" fill="#FFD700" font-size="24" font-weight="bold">IMPROVE</text>
+                    <text x="300" y="195" text-anchor="middle" fill="#DAA520" font-size="14">Quality / Functionality</text>
+
+
+                    <!-- INCREASE graph (linear, for quantity) -->
+                    <polyline points="100,170 200,140 300,110 400,80 500,50" fill="none" stroke="url(#gradIncrease)" stroke-width="4" stroke-dasharray="5 5" stroke-linecap="round" stroke-linejoin="round" />
+                    <text x="550" y="60" fill="#32CD32" font-size="24" font-weight="bold">INCREASE</text>
+                    <text x="550" y="90" fill="#DAA520" font-size="14">Quantity / Amount</text>
+
+                </svg>
+                <div class="w-full text-center mt-4">
+                    <p class="text-gray-700">The orange/red line (IMPROVE) shows a journey with ups and downs, representing iterative adjustments and qualitative enhancements. The green/gold dashed line (INCREASE) shows a steady upward trend, representing a quantitative growth in numbers or volume.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="collocations" class="py-12 md:py-20 bg-gray-50 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Collocations with 'Increase' 📊</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">Using collocations helps make your English sound more natural and precise. Here are some common collocations with 'increase' in a professional context:</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+                <ul class="list-disc list-inside space-y-4 text-gray-700">
+                    <li><strong>Increase dramatically / significantly / substantially:</strong> Indicates a very large or noticeable increase.
+                        <p class="ml-4 italic text-gray-600">Example: "The company's profits <span class="highlight-word">increased dramatically</span> last quarter due to new market strategies."</p>
+                    </li>
+                    <li><strong>Increase sharply / rapidly / quickly:</strong> Suggests a fast rate of increase.
+                        <p class="ml-4 italic text-gray-600">Example: "Online sales <span class="highlight-word">increased sharply</span> after the advertising campaign."</p>
+                    </li>
+                    <li><strong>Increase steadily / gradually:</strong> Implies a consistent and slow increase over time.
+                        <p class="ml-4 italic text-gray-600">Example: "Customer retention has <span class="highlight-word">increased steadily</span> since we implemented the loyalty program."</p>
+                    </li>
+                    <li><strong>Increase by / to:</strong> Used to specify the amount or level of increase.
+                        <p class="ml-4 italic text-gray-600">Example: "Production output is expected to <span class="highlight-word">increase by</span> 20% next year."</p>
+                    </li>
+                    <li><strong>Increase in demand / costs / revenue / prices / numbers:</strong> Specifies what is increasing.
+                        <p class="ml-4 italic text-gray-600">Example: "There was a noticeable <span class="highlight-word">increase in demand</span> for our eco-friendly products."</p>
+                    </li>
+                    <li><strong>A sharp / significant / substantial increase:</strong> Noun phrases to describe the magnitude of the increase.
+                        <p class="ml-4 italic text-gray-600">Example: "The report showed a <span class="highlight-word">substantial increase</span> in renewable energy investments."</p>
+                    </li>
+                    <li><strong>Face an increase / see an increase / experience an increase:</strong> Verbs used with the noun 'increase' to describe the occurrence of growth.
+                        <p class="ml-4 italic text-gray-600">Example: "Many small businesses are starting to <span class="highlight-word">experience an increase</span> in online inquiries."</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="boost-explanation" class="py-12 md:py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Understanding 'Boost' (Incentivar/Impulsionar): Powering Up Performance ⚡</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600 golden-text">While 'improve' signifies general betterment and 'enhance' implies qualitative refinement, 'boost' typically means to increase or improve something, especially quickly or by a significant amount, often related to energy, morale, or output.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-4">When to use <span class="highlight-word">'Boost'</span>:</h3>
+                <ul class="list-disc list-inside space-y-3 text-gray-700">
+                    <li><strong>Rapid Increase or Improvement:</strong> When you want to convey a quick or sudden upward movement in quantity, morale, or performance.
+                        <p class="ml-4 italic text-gray-600">Example: "The new bonus structure will <span class="highlight-word">boost</span> employee motivation."</p>
+                    </li>
+                    <li><strong>Adding Energy or Impetus:</strong> Often used when something provides a surge of energy or helps a process gain momentum.
+                        <p class="ml-4 italic text-gray-600">Example: "The marketing campaign is designed to <span class="highlight-word">boost</span> brand recognition."</p>
+                    </li>
+                    <li><strong>Direct Support/Uplift:</strong> When an action directly lifts or supports something to a higher level.
+                        <p class="ml-4 italic text-gray-600">Example: "Additional funding will <span class="highlight-word">boost</span> research and development efforts."</p>
+                    </li>
+                </ul>
+
+                <h3 class="text-2xl font-semibold text-blue-600 mt-8 mb-4">Why not 'Enhance' or 'Improve' instead of 'Boost'?</h3>
+                
+                <div class="grid md:grid-cols-2 gap-6 mt-6">
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-sm">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2 flex items-center"><span class="text-3xl mr-2">⬆️</span> 'Boost' vs. 'Improve'</h4>
+                        <p class="text-gray-700 mb-2">
+                            <span class="highlight-word">Improve</span> is more general, referring to any betterment (slow/fast, qualitative/quantitative). <span class="highlight-word">Boost</span> specifically suggests a significant, often rapid, positive surge or lift.
+                        </p>
+                        <p class="text-gray-700 italic">
+                            Example: You <span class="highlight-word">improve</span> your presentation skills over time (general betterment), but a successful pitch might <span class="highlight-word">boost</span> your confidence (rapid, focused uplift).
+                        </p>
+                    </div>
+                    <div class="bg-gray-100 p-4 rounded-lg shadow-sm">
+                        <h4 class="text-xl font-semibold text-gray-800 mb-2 flex items-center"><span class="text-3xl mr-2">✨</span> 'Boost' vs. 'Enhance'</h4>
+                        <p class="text-gray-700 mb-2">
+                            <span class="highlight-word">Enhance</span> implies adding value or quality, making something more effective or attractive, often through refinement. <span class="highlight-word">Boost</span> is more about increasing the *level* or *power* of something.
+                        </p>
+                        <p class="text-gray-700 italic">
+                            Example: The new software features <span class="highlight-word">enhance</span> user experience (adds quality/refinement), but a new server might <span class="highlight-word">boost</span> system speed (increases power/level).
+                        </p>
+                    </div>
+                </div>
+
+                <p class="text-sm italic text-gray-500 mt-6">
+                    <strong>Summary:</strong> 'Boost' implies a rapid, often significant, increase or uplift, particularly in areas like morale, energy, or output. It's about injecting momentum or power, differentiating it from the general betterment of 'improve' or the qualitative refinement of 'enhance'.
+                    <br>
+                    <strong>(Para Brasileiros):</strong> 'Boost' sugere um aumento ou impulso rápido e muitas vezes significativo, especialmente em áreas como moral, energia ou produtividade. Trata-se de injetar força ou dinamismo, o que o distingue da melhoria geral de 'improve' ou do aprimoramento qualitativo de 'enhance'.
+                </p>
+            </div>
+
+            <div id="boost-up-explanation" class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md mt-8">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-4">What is <span class="highlight-word">'Boost Up'</span>? 🤔</h3>
+                <p class="mb-4 text-gray-700">
+                    While 'boost' is a versatile verb, the phrasal verb '<span class="highlight-word">boost up</span>' emphasizes the upward direction or the act of lifting something, often literally or metaphorically, to a higher position or level. It often implies a more direct or physical act of raising.
+                </p>
+                <ul class="list-disc list-inside space-y-3 text-gray-700">
+                    <li><strong>Physical Uplift:</strong> Can be used when physically lifting something or someone.
+                        <p class="ml-4 italic text-gray-600">Example: "Can you help me <span class="highlight-word">boost up</span> this heavy box onto the shelf?"</p>
+                    </li>
+                    <li><strong>Increasing Volume/Level (e.g., sound):</strong> Commonly used for increasing the level of something like sound or light.
+                        <p class="ml-4 italic text-gray-600">Example: "The DJ asked the engineer to <span class="highlight-word">boost up</span> the bass."</p>
+                    </li>
+                    <li><strong>Intensifying Support/Confidence (more active than 'boost'):</strong> Implies a more active effort in providing support or encouragement to someone or something.
+                        <p class="ml-4 italic text-gray-600">Example: "His teammates really <span class="highlight-word">boosted him up</span> after his mistake."</p>
+                    </li>
+                </ul>
+                <p class="text-sm italic text-gray-500 mt-6">
+                    <strong>Summary:</strong> 'Boost up' specifically highlights the action of raising or lifting something/someone upwards, whether physically, audibly, or in terms of morale/support. While 'boost' can imply a general increase, 'boost up' adds emphasis to the upward motion or elevation.
+                    <br>
+                    <strong>(Para Brasileiros):</strong> 'Boost up' enfatiza a ação de levantar ou impulsionar algo/alguém para cima, seja fisicamente, em volume (som) ou em termos de moral/apoio. Enquanto 'boost' pode ser um aumento geral, 'boost up' adiciona a ênfase na elevação ou movimento ascendente.
+                </p>
+            </div>
+        </section>
+
+        <section id="boost-real-world" class="py-12 md:py-20 bg-gray-50 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">In Daily Life: Practical Examples of 'Boost' & 'Boost Up' 🌐</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">See how 'boost' and 'boost up' are used in news, business communications, and general contexts, demonstrating energetic increases and uplifting actions.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="boost-business">Business 💼</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="boost-education">Education 🎓</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="boost-health">Health ❤️‍🩹</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="boost-technology">Technology 💻</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="boost-personal">Personal Life 😊</button>
+            </div>
+            
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg max-w-6xl mx-auto">
+                <div id="content-boost-business" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Business: Sales and Morale Surges 📈</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Sales Meeting:</strong> "The new advertising campaign is expected to <span class="highlight-word">boost</span> sales by 20% this quarter." (Espera-se que a nova campanha de publicidade <span class="highlight-word">impulsione</span> as vendas em 20% neste trimestre.) 🚀</li>
+                        <li><strong>Internal Memo:</strong> "The CEO's inspiring speech really <span class="highlight-word">boosted up</span> team morale before the challenging project." (O discurso inspirador do CEO realmente <span class="highlight-word">animou/impulsionou</span> o moral da equipe antes do projeto desafiador.) 💪</li>
+                        <li><strong>Market Analysis:</strong> "Government incentives aim to <span class="highlight-word">boost</span> investment in renewable energy." (Incentivos governamentais visam <span class="highlight-word">incentivar/impulsionar</span> o investimento em energia renovável.) 💰</li>
+                    </ul>
+                </div>
+                <div id="content-boost-education" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Education: Engagement and Motivation 🎓</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Teacher's Feedback:</strong> "Positive reinforcement can significantly <span class="highlight-word">boost</span> students' confidence in their abilities." (O reforço positivo pode <span class="highlight-word">aumentar/impulsionar</span> significativamente a confiança dos alunos em suas habilidades.) ✨</li>
+                        <li><strong>School Program:</strong> "The new interactive learning platform is designed to <span class="highlight-word">boost</span> student engagement." (A nova plataforma de aprendizagem interativa foi projetada para <span class="highlight-word">impulsionar</span> o engajamento dos alunos.)💡</li>
+                        <li><strong>Student Council:</strong> "We organized a workshop to <span class="highlight-word">boost up</span> participation in extracurricular activities." (Organizamos um workshop para <span class="highlight-word">incentivar/impulsionar</span> a participação em atividades extracurriculares.) 🗣️</li>
+                    </ul>
+                </div>
+                <div id="content-boost-health" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Health: Energy and Immunity ❤️‍🩹</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Nutrition Advice:</strong> "Eating a balanced diet can <span class="highlight-word">boost</span> your immune system." (Comer uma dieta balanceada pode <span class="highlight-word">impulsionar/fortalecer</span> seu sistema imunológico.) 🍎</li>
+                        <li><strong>Fitness Coach:</strong> "A short, intense workout can really <span class="highlight-word">boost</span> your energy levels for the day." (Um treino curto e intenso pode realmente <span class="highlight-word">impulsionar/aumentar</span> seus níveis de energia para o dia.) 🔥</li>
+                        <li><strong>Therapist's Note:</strong> "Small achievements can <span class="highlight-word">boost up</span> a patient's spirits during recovery." (Pequenas conquistas podem <span class="highlight-word">animar/elevar</span> o ânimo de um paciente durante a recuperação.) 😊</li>
+                    </ul>
+                </div>
+                <div id="content-boost-technology" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Technology: Performance and Speed 💻</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>System Administrator:</strong> "Upgrading the RAM will <span class="highlight-word">boost</span> the computer's processing speed." (A atualização da RAM <span class="highlight-word">aumentará/impulsionará</span> a velocidade de processamento do computador.) ⚡</li>
+                        <li><strong>Developer's Note:</strong> "Optimizing the code can <span class="highlight-word">boost up</span> the application's loading time." (A otimização do código pode <span class="highlight-word">acelerar/impulsionar</span> o tempo de carregamento do aplicativo.) ⏱️</li>
+                        <li><strong>New Feature Announcement:</strong> "The new AI algorithm is designed to <span class="highlight-word">boost</span> the accuracy of search results." (O novo algoritmo de IA foi projetado para <span class="highlight-word">aumentar/impulsionar</span> a precisão dos resultados de pesquisa.) 🧠</li>
+                    </ul>
+                </div>
+                <div id="content-boost-personal" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Personal Life: Motivation and Self-Esteem 🌱</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Friend's Advice:</strong> "A positive outlook can really <span class="highlight-word">boost</span> your mood." (Uma perspectiva positiva pode realmente <span class="highlight-word">elevar/melhorar</span> seu humor.) 😄</li>
+                        <li><strong>Self-Improvement:</strong> "Setting and achieving small goals can <span class="highlight-word">boost up</span> your self-esteem." (Definir e alcançar pequenas metas pode <span class="highlight-word">elevar/impulsionar</span> sua autoestima.) ✅</li>
+                        <li><strong>Parenting Tip:</strong> "Encouraging words from parents can <span class="highlight-word">boost</span> a child's confidence." (Palavras de incentivo dos pais podem <span class="highlight-word">impulsionar/aumentar</span> a confiança de uma criança.) 👨‍👩‍👧‍👦</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="boost-collocations" class="py-12 md:py-20 bg-gray-100 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Collocations with 'Boost' and 'Boost Up' ✨</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">These phrases demonstrate how 'boost' and 'boost up' combine with other words to convey specific meanings of increased energy, morale, or output.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+                <ul class="list-disc list-inside space-y-4 text-gray-700">
+                    <li><strong>Boost morale:</strong> To improve the spirits or confidence of a group or individual.
+                        <p class="ml-4 italic text-gray-600">Example: "The surprise bonus <span class="highlight-word">boosted employee morale</span>."</p>
+                    </li>
+                    <li><strong>Boost sales / profits:</strong> To increase the amount of goods sold or money earned.
+                        <p class="ml-4 italic text-gray-600">Example: "The new marketing strategy is designed to <span class="highlight-word">boost sales</span> significantly."</p>
+                    </li>
+                    <li><strong>Boost confidence / self-esteem:</strong> To increase someone's belief in their own abilities or worth.
+                        <p class="ml-4 italic text-gray-600">Example: "Winning the award really <span class="highlight-word">boosted her confidence</span>."</p>
+                    </li>
+                    <li><strong>Boost the economy:</strong> To stimulate economic growth.
+                        <p class="ml-4 italic text-gray-600">Example: "Government spending can help <span class="highlight-word">boost the economy</span> during a recession."</p>
+                    </li>
+                    <li><strong>Boost immune system:</strong> To strengthen the body's natural defenses.
+                        <p class="ml-4 italic text-gray-600">Example: "Eating fruits and vegetables helps to <span class="highlight-word">boost your immune system</span>."</p>
+                    </li>
+                    <li><strong>Boost up the volume / bass:</strong> To increase the sound level (often implies a physical upward adjustment, especially for 'boost up').
+                        <p class="ml-4 italic text-gray-600">Example: "Can you <span class="highlight-word">boost up the volume</span> on the TV?"</p>
+                    </li>
+                    <li><strong>Boost up spirits:</strong> To actively lift someone's mood or morale.
+                        <p class="ml-4 italic text-gray-600">Example: "A good conversation can often <span class="highlight-word">boost up your spirits</span>."</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="enhance-real-world" class="py-12 md:py-20 bg-gray-50 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">In Daily Life: Practical Examples of 'Enhance' & 'Enhancement' 🌐</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">See how 'enhance' and 'enhancement' are used in various contexts, focusing on qualitative improvements and refinements.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="enhance-business">Business 💼</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="enhance-education">Education 🎓</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="enhance-health">Health ❤️‍🩹</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="enhance-technology">Technology 💻</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="enhance-personal">Personal Life 😊</button>
+            </div>
+            
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg max-w-6xl mx-auto">
+                <div id="content-enhance-business" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Business: Quality and Value Addition 📈</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Product Development:</strong> "The new software update will <span class="highlight-word">enhance</span> the user interface for better usability." (A nova atualização de software irá <span class="highlight-word">aprimorar/melhorar</span> a interface do usuário para melhor usabilidade.) 🚀</li>
+                        <li><strong>Customer Service:</strong> "We offer specialized training to <span class="highlight-word">enhance</span> our team's customer engagement skills." (Oferecemos treinamento especializado para <span class="highlight-word">aprimorar/melhorar</span> as habilidades de engajamento com o cliente da nossa equipe.) 🤝</li>
+                        <li><strong>Brand Strategy:</strong> "Investing in sustainable practices can <span class="highlight-word">enhance</span> our brand's reputation." (Investir em práticas sustentáveis pode <span class="highlight-word">melhorar/valorizar</span> a reputação da nossa marca.) ⭐</li>
+                    </ul>
+                </div>
+                <div id="content-enhance-education" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Education: Learning Quality and Experience 🎓</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Curriculum Review:</strong> "We are integrating multimedia tools to <span class="highlight-word">enhance</span> the learning experience." (Estamos integrando ferramentas multimédia para <span class="highlight-word">aprimorar/enriquecer</span> a experiência de aprendizagem.) 💡</li>
+                        <li><strong>Research Project:</strong> "The new laboratory equipment will <span class="highlight-word">enhance</span> the precision of our experimental results." (O novo equipamento de laboratório irá <span class="highlight-word">aprimorar/aumentar</span> a precisão dos nossos resultados experimentais.) 🔬</li>
+                        <li><strong>Teacher Training:</strong> "Workshops on modern pedagogy <span class="highlight-word">enhance</span> teachers' instructional techniques." (Workshops sobre pedagogia moderna <span class="highlight-word">aprimoram/melhoram</span> as técnicas de ensino dos professores.) 🧑‍🏫</li>
+                    </ul>
+                </div>
+                <div id="content-enhance-health" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Health: Quality of Care and Well-being 🩺</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Patient Care:</strong> "New protocols have been implemented to <span class="highlight-word">enhance</span> patient safety in hospitals." (Novos protocolos foram implementados para <span class="highlight-word">aprimorar/aumentar</span> a segurança do paciente em hospitais.) ❤️‍🩹</li>
+                        <li><strong>Therapy:</strong> "Mindfulness exercises can <span class="highlight-word">enhance</span> mental clarity and reduce stress." (Exercícios de mindfulness podem <span class="highlight-word">melhorar/aumentar</span> a clareza mental e reduzir o estresse.) 🧘</li>
+                        <li><strong>Medical Technology:</strong> "Advanced imaging techniques <span class="highlight-word">enhance</span> the accuracy of diagnoses." (Técnicas avançadas de imagem <span class="highlight-word">aprimoram/aumentam</span> a precisão dos diagnósticos.) 🖥️</li>
+                    </ul>
+                </div>
+                <div id="content-enhance-technology" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Technology: Features and User Experience 💻</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Software Development:</strong> "Future updates will <span class="highlight-word">enhance</span> the app's security features and privacy controls." (Futuras atualizações irão <span class="highlight-word">aprimorar/melhorar</span> os recursos de segurança e os controles de privacidade do aplicativo.) 🔒</li>
+                        <li><strong>Product Design:</strong> "The sleek new design aims to <span class="highlight-word">enhance</span> the overall user experience." (O novo design elegante visa <span class="highlight-word">aprimorar/melhorar</span> a experiência geral do usuário.) 🎨</li>
+                        <li><strong>AI Research:</strong> "Researchers are working to <span class="highlight-word">enhance</span> AI's ability to understand natural language." (Pesquisadores estão trabalhando para <span class="highlight-word">aprimorar/melhorar</span> a capacidade da IA de entender a linguagem natural.) 🧠</li>
+                    </ul>
+                </div>
+                <div id="content-enhance-personal" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Personal Life: Quality of Life and Skills 🌱</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Home Improvement:</strong> "Adding smart home devices can <span class="highlight-word">enhance</span> the comfort and convenience of your living space." (Adicionar dispositivos de casa inteligente pode <span class="highlight-word">melhorar/aumentar</span> o conforto e a conveniência do seu espaço de vida.) 🏡</li>
+                        <li><strong>Hobby:</strong> "Taking a photography class can <span class="highlight-word">enhance</span> your creative skills." (Fazer uma aula de fotografia pode <span class="highlight-word">aprimorar/melhorar</span> suas habilidades criativas.) 📸</li>
+                        <li><strong>Self-Care:</strong> "Getting enough sleep can significantly <span class="highlight-word">enhance</span> your daily well-being." (Dormir o suficiente pode <span class="highlight-word">melhorar/aumentar</span> significativamente seu bem-estar diário.) ✨</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="enhance-collocations" class="py-12 md:py-20 bg-gray-100 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Collocations with 'Enhance' ✨</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">These common phrases show how 'enhance' is used to talk about qualitative improvements, adding value, or making something more effective or attractive.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+                <ul class="list-disc list-inside space-y-4 text-gray-700">
+                    <li><strong>Enhance quality:</strong> To improve the standard or excellence of something.
+                        <p class="ml-4 italic text-gray-600">Example: "New production methods will <span class="highlight-word">enhance product quality</span>."</p>
+                    </li>
+                    <li><strong>Enhance experience:</strong> To make an event, service, or interaction better or more enjoyable.
+                        <p class="ml-4 italic text-gray-600">Example: "Interactive features <span class="highlight-word">enhance the user experience</span> on the app."</p>
+                    </li>
+                    <li><strong>Enhance performance:</strong> To improve how well something functions or operates (often with a focus on qualitative improvement).
+                        <p class="ml-4 italic text-gray-600">Example: "Investing in employee training can <span class="highlight-word">enhance team performance</span>."</p>
+                    </li>
+                    <li><strong>Enhance appearance / beauty:</strong> To make something look better or more attractive.
+                        <p class="ml-4 italic text-gray-600">Example: "The new landscaping will <span class="highlight-word">enhance the appearance</span> of the building."</p>
+                    </li>
+                    <li><strong>Enhance skills / abilities:</strong> To improve one's proficiency or capabilities.
+                        <p class="ml-4 italic text-gray-600">Example: "Workshops are a great way to <span class="highlight-word">enhance your public speaking skills</span>."</p>
+                    </li>
+                    <li><strong>Significantly / Greatly enhance:</strong> To improve something to a large or noticeable degree.
+                        <p class="ml-4 italic text-gray-600">Example: "The new security system will <span class="highlight-word">significantly enhance</span> data protection."</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="optimize-real-world" class="py-12 md:py-20 bg-gray-50 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">In Daily Life: Practical Examples of 'Optimize' & 'Optimization' 🌐</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">See how 'optimize' and 'optimization' are used in various contexts, focusing on making something as effective or functional as possible.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="optimize-business">Business 💼</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="optimize-education">Education 🎓</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="optimize-health">Health ❤️‍🩹</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="optimize-technology">Technology 💻</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="optimize-personal">Personal Life 😊</button>
+            </div>
+            
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg max-w-6xl mx-auto">
+                <div id="content-optimize-business" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Business: Efficiency and Resource Management 📈</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Operations Meeting:</strong> "We need to <span class="highlight-word">optimize</span> our supply chain to reduce costs and delivery times." (Precisamos <span class="highlight-word">otimizar</span> nossa cadeia de suprimentos para reduzir custos e prazos de entrega.) ⚙️</li>
+                        <li><strong>Marketing Strategy:</strong> "Through A/B testing, we aim for the <span class="highlight-word">optimization</span> of our conversion rates on the website." (Através de testes A/B, visamos a <span class="highlight-word">otimização</span> das nossas taxas de conversão no site.) 📊</li>
+                        <li><strong>Financial Planning:</strong> "The new software will help us <span class="highlight-word">optimize</span> our budget allocation for maximum return on investment." (O novo software nos ajudará a <span class="highlight-word">otimizar</span> a alocação do nosso orçamento para obter o máximo retorno sobre o investimento.) 💰</li>
+                    </ul>
+                </div>
+                <div id="content-optimize-education" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Education: Learning Efficiency and Curriculum Design 🎓</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Study Techniques:</strong> "To <span class="highlight-word">optimize</span> your study time, create a schedule and stick to it." (Para <span class="highlight-word">otimizar</span> seu tempo de estudo, crie um cronograma e siga-o.) ⏰</li>
+                        <li><strong>Curriculum Development:</strong> "The school is constantly seeking course <span class="highlight-word">optimization</span> to meet evolving student needs." (A escola busca constantemente a <span class="highlight-word">otimização</span> dos cursos para atender às necessidades em evolução dos alunos.) 📚</li>
+                        <li><strong>Resource Allocation:</strong> "We need to <span class="highlight-word">optimize</span> the use of classroom space to accommodate more students effectively." (Precisamos <span class="highlight-word">otimizar</span> o uso do espaço das salas de aula para acomodar mais alunos de forma eficaz.) 🧑‍🏫</li>
+                    </ul>
+                </div>
+                <div id="content-optimize-health" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Health: Treatment Efficacy and Patient Care ❤️‍🩹</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Patient Management:</strong> "Doctors strive to <span class="highlight-word">optimize</span> treatment plans for individual patient outcomes." (Os médicos se esforçam para <span class="highlight-word">otimizar</span> os planos de tratamento para resultados individuais dos pacientes.) 💊</li>
+                        <li><strong>Hospital Operations:</strong> "The hospital introduced new protocols for the <span class="highlight-word">optimization</span> of patient flow and waiting times." (O hospital introduziu novos protocolos para a <span class="highlight-word">otimização</span> do fluxo de pacientes e tempos de espera.) 🏥</li>
+                        <li><strong>Nutrition Science:</strong> "Dietary supplements can help <span class="highlight-word">optimize</span> nutrient absorption." (Suplementos dietéticos podem ajudar a <span class="highlight-word">otimizar</span> a absorção de nutrientes.) 🍎</li>
+                    </ul>
+                </div>
+                <div id="content-optimize-technology" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Technology: Performance and Resource Efficiency 💻</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Software Engineering:</strong> "Developers continually work to <span class="highlight-word">optimize</span> code for faster execution and lower memory usage." (Os desenvolvedores trabalham continuamente para <span class="highlight-word">otimizar</span> o código para execução mais rápida e menor uso de memória.) ⚡</li>
+                        <li><strong>Network Management:</strong> "Network <span class="highlight-word">optimization</span> is crucial for ensuring low latency and high data throughput." (A <span class="highlight-word">otimização</span> de rede é crucial para garantir baixa latência e alta taxa de transferência de dados.) 📡</li>
+                        <li><strong>Algorithm Design:</strong> "The new algorithm aims to <span class="highlight-word">optimize</span> search results for relevance and speed." (O novo algoritmo visa <span class="highlight-word">otimizar</span> os resultados de pesquisa por relevância e velocidade.) 🧠</li>
+                    </ul>
+                </div>
+                <div id="content-optimize-personal" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Personal Life: Productivity and Well-being 🌱</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Time Management:</strong> "Using a productivity app can help you <span class="highlight-word">optimize</span> your daily schedule." (Usar um aplicativo de produtividade pode ajudá-lo a <span class="highlight-word">otimizar</span> sua agenda diária.) 🗓️</li>
+                        <li><strong>Fitness Training:</strong> "Personal trainers help clients with the <span class="highlight-word">optimization</span> of their workout routines for specific goals." (Personal trainers ajudam os clientes na <span class="highlight-word">otimização</span> de suas rotinas de treino para objetivos específicos.) 💪</li>
+                        <li><strong>Home Organization:</strong> "Decluttering your living space can <span class="highlight-word">optimize</span> its functionality and create a more relaxing environment." (Desorganizar seu espaço de convivência pode <span class="highlight-word">otimizar</span> sua funcionalidade e criar um ambiente mais relaxante.) 🏠</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="optimize-collocations" class="py-12 md:py-20 bg-gray-100 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Collocations with 'Optimize' ⚙️</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">These phrases show how 'optimize' is used to describe making something as effective, efficient, or functional as possible, often through fine-tuning.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+                <ul class="list-disc list-inside space-y-4 text-gray-700">
+                    <li><strong>Optimize performance:</strong> To make a system, machine, or person operate at its best possible level.
+                        <p class="ml-4 italic text-gray-600">Example: "We continually <span class="highlight-word">optimize server performance</span> for faster response times."</p>
+                    </li>
+                    <li><strong>Optimize efficiency:</strong> To make a process, system, or operation work with the least waste of time or effort.
+                        <p class="ml-4 italic text-gray-600">Example: "Automating tasks will help to <span class="highlight-word">optimize operational efficiency</span>."</p>
+                    </li>
+                    <li><strong>Optimize resources:</strong> To use available assets (e.g., time, money, personnel) in the most effective way.
+                        <p class="ml-4 italic text-gray-600">Example: "The project manager's goal is to <span class="highlight-word">optimize team resources</span>."</p>
+                    </li>
+                    <li><strong>Optimize workflow:</strong> To arrange a sequence of tasks or processes to achieve maximum efficiency.
+                        <p class="ml-4 italic text-gray-600">Example: "The new software helps to <span class="highlight-word">optimize the design workflow</span>."</p>
+                    </li>
+                    <li><strong>Optimize costs:</strong> To reduce expenses to the lowest possible level while maintaining quality.
+                        <p class="ml-4 italic text-gray-600">Example: "We are exploring ways to <span class="highlight-word">optimize production costs</span> without compromising quality."</p>
+                    </li>
+                    <li><strong>Optimize results:</strong> To achieve the best possible outcomes.
+                        <p class="ml-4 italic text-gray-600">Example: "A/B testing allows us to <span class="highlight-word">optimize marketing campaign results</span>."</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="streamline-real-world" class="py-12 md:py-20 bg-gray-50 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">In Daily Life: Practical Examples of 'Streamline' & 'Streamlining' 🌐</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">See how 'streamline' and 'streamlining' are used in various contexts, focusing on making processes more efficient and simpler.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="streamline-business">Business 💼</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="streamline-education">Education 🎓</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="streamline-health">Health ❤️‍🩹</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="streamline-technology">Technology 💻</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="streamline-personal">Personal Life 😊</button>
+            </div>
+            
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg max-w-6xl mx-auto">
+                <div id="content-streamline-business" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Business: Processes and Efficiency 📈</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Operations:</strong> "Our goal is to <span class="highlight-word">streamline</span> the onboarding process for new employees, making it quicker and smoother." (Nosso objetivo é <span class="highlight-word">simplificar/otimizar</span> o processo de integração para novos funcionários, tornando-o mais rápido e suave.) ⚙️</li>
+                        <li><strong>Project Management:</strong> "The team implemented new software for <span class="highlight-word">streamlining</span> task assignments and progress tracking." (A equipe implementou um novo software para <span class="highlight-word">simplificar/otimizar</span> as atribuições de tarefas e o rastreamento do progresso.) 📊</li>
+                        <li><strong>Finance:</strong> "We need to <span class="highlight-word">streamline</span> our invoicing system to reduce errors and delays." (Precisamos <span class="highlight-word">simplificar/agilizar</span> nosso sistema de faturamento para reduzir erros e atrasos.) 💰</li>
+                    </ul>
+                </div>
+                <div id="content-streamline-education" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Education: Administration and Learning Paths 🎓</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Administration:</strong> "The school introduced an online registration system to <span class="highlight-word">streamline</span> student enrollment." (A escola introduziu um sistema de registro online para <span class="highlight-word">simplificar/agilizar</span> a matrícula de alunos.) 🏫</li>
+                        <li><strong>Curriculum Design:</strong> "Educators are working to <span class="highlight-word">streamline</span> the curriculum, removing redundancies and focusing on core competencies." (Educadores estão trabalhando para <span class="highlight-word">simplificar/otimizar</span> o currículo, removendo redundâncias e focando em competências essenciais.) 📚</li>
+                        <li><strong>Student Support:</strong> "The new advising system aims to <span class="highlight-word">streamline</span> the process for students to get academic help." (O novo sistema de aconselhamento visa <span class="highlight-word">simplificar/facilitar</span> o processo para os alunos obterem ajuda acadêmica.) 🧑‍🏫</li>
+                    </ul>
+                </div>
+                <div id="content-streamline-health" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Health: Patient Care and Operations ❤️‍🩹</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Hospital Operations:</strong> "Implementing digital records will <span class="highlight-word">streamline</span> patient information access for medical staff." (A implementação de registros digitais irá <span class="highlight-word">simplificar/agilizar</span> o acesso à informação do paciente para a equipe médica.) 🏥</li>
+                        <li><strong>Patient Experience:</strong> "The clinic is looking for ways to <span class="highlight-word">streamline</span> the appointment scheduling process." (A clínica está procurando maneiras de <span class="highlight-word">simplificar/otimizar</span> o processo de agendamento de consultas.) 📅</li>
+                        <li><strong>Emergency Services:</strong> "Improving communication between departments will <span class="highlight-word">streamline</span> emergency response times." (Melhorar a comunicação entre os departamentos irá <span class="highlight-word">simplificar/agilizar</span> os tempos de resposta de emergência.) 🚑</li>
+                    </ul>
+                </div>
+                <div id="content-streamline-technology" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Technology: Development and User Experience 💻</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Software Development:</strong> "Automated testing helps to <span class="highlight-word">streamline</span> the development pipeline, reducing manual effort." (Testes automatizados ajudam a <span class="highlight-word">simplificar/agilizar</span> o pipeline de desenvolvimento, reduzindo o esforço manual.) 💾</li>
+                        <li><strong>User Experience:</strong> "Designing an intuitive interface will <span class="highlight-word">streamline</span> user interaction with the application." (Projetar uma interface intuitiva irá <span class="highlight-word">simplificar/facilitar</span> a interação do usuário com o aplicativo.) 🎨</li>
+                        <li><strong>Data Management:</strong> "New database solutions can <span class="highlight-word">streamline</span> data entry and retrieval processes." (Novas soluções de banco de dados podem <span class="highlight-word">simplificar/otimizar</span> os processos de entrada e recuperação de dados.) 🧠</li>
+                    </ul>
+                </div>
+                <div id="content-streamline-personal" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Personal Life: Daily Routines and Tasks 🌱</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Household Chores:</strong> "Creating a weekly schedule can <span class="highlight-word">streamline</span> household chores and make them less daunting." (Criar um cronograma semanal pode <span class="highlight-word">simplificar/otimizar</span> as tarefas domésticas e torná-las menos assustadoras.) 🏡</li>
+                        <li><strong>Finances:</strong> "Automating bill payments can <span class="highlight-word">streamline</span> your personal finances and prevent late fees." (Automatizar o pagamento de contas pode <span class="highlight-word">simplificar/agilizar</span> suas finanças pessoais e evitar multas por atraso.) 💸</li>
+                        <li><strong>Learning:</strong> "Using flashcards regularly can <span class="highlight-word">streamline</span> the memorization process for new vocabulary." (Usar flashcards regularmente pode <span class="highlight-word">simplificar/otimizar</span> o processo de memorização para novo vocabulário.) 📖</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="streamline-collocations" class="py-12 md:py-20 bg-gray-100 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Collocations with 'Streamline' 💨</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">These phrases show how 'streamline' is used to describe making processes more efficient, simpler, or smoother by removing unnecessary steps or complexities.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+                <ul class="list-disc list-inside space-y-4 text-gray-700">
+                    <li><strong>Streamline process / workflow:</strong> To make a sequence of actions or tasks more efficient and logical.
+                        <p class="ml-4 italic text-gray-600">Example: "We need to <span class="highlight-word">streamline the approval process</span> for expense reports."</p>
+                    </li>
+                    <li><strong>Streamline operations:</strong> To make the way a business or organization works more efficient and less complex.
+                        <p class="ml-4 italic text-gray-600">Example: "The new software will <span class="highlight-word">streamline customer service operations</span>."</p>
+                    </li>
+                    <li><strong>Streamline procedures / policies:</strong> To simplify or improve established methods or rules.
+                        <p class="ml-4 italic text-gray-600">Example: "The government aims to <span class="highlight-word">streamline regulatory procedures</span> to encourage investment."</p>
+                    </li>
+                    <li><strong>Streamline communication:</strong> To make communication clearer and more direct, reducing unnecessary steps or misunderstandings.
+                        <p class="ml-4 italic text-gray-600">Example: "Using a single platform can help <span class="highlight-word">streamline team communication</span>."</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="verb-comparison-table-section" class="py-12 md:py-20 bg-gray-100 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Comparative Guide to Improvement Verbs ⚖️</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">This table provides a comprehensive comparison of 'streamline', 'improve', 'enhance', 'get better', 'optimize', and 'boost', highlighting their appropriate usage based on industry, common users, and context.</p>
+            </div>
+            <div class="overflow-x-auto max-w-full mx-auto bg-white rounded-lg shadow-lg">
+                <table class="w-full summary-table">
+                    <thead>
+                        <tr>
+                            <th>Verb</th>
+                            <th>Industry/Area</th>
+                            <th>Common Users</th>
+                            <th>Context/Meaning</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Improve</strong></td>
+                            <td>General (all industries), Education, Health, Personal Development</td>
+                            <td>Professionals, Educators, Students, Healthcare Providers, Individuals</td>
+                            <td><strong>General betterment or progress.</strong> Often implies a noticeable, but not necessarily drastic, positive change. Can be qualitative or quantitative. Used when something simply becomes "better" than it was before, often through effort or a change in approach. <br> <em>Examples: Improve sales, improve health, improve a skill.</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Enhance</strong></td>
+                            <td>Technology, Design, Arts, User Experience, Quality Control, Aesthetics, Professional Skills</td>
+                            <td>Developers, Designers, Artists, Quality Managers, Trainers, Marketing Professionals, Luxury Brands</td>
+                            <td><strong>Adding value, quality, or attractiveness; making something more effective or refined.</strong> Focuses on qualitative improvements, making something superior or more appealing. Often implies a subtle yet significant upgrade, or adding features to make something better. <br> <em>Examples: Enhance user experience, enhance audio quality, enhance brand image, enhance skills (qualitative).</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Optimize</strong></td>
+                            <td>Technology, Operations, Business Processes, Logistics, Engineering, Performance, Efficiency</td>
+                            <td>Engineers, Data Scientists, Business Analysts, IT Professionals, Operations Managers, Marketers, Fitness Experts</td>
+                            <td><strong>Making something as effective, efficient, or functional as possible.</strong> Focuses on maximizing output, minimizing waste, or achieving the best possible performance under given constraints. Often involves data analysis and iterative adjustments to find the best solution. <br> <em>Examples: Optimize website loading speed, optimize production costs, optimize a workout routine.</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Streamline</strong></td>
+                            <td>Business Processes, Administration, Workflow, Supply Chain, Bureaucracy</td>
+                            <td>Business Consultants, Process Engineers, Administrators, Project Managers, Government Officials</td>
+                            <td><strong>Making a process more efficient, simpler, or smoother by removing unnecessary steps or complexities.</strong> Focuses on improving flow and reducing friction. Often used when a process is too complicated or slow. <br> <em>Examples: Streamline the approval process, streamline onboarding, streamline customer service operations.</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Boost</strong></td>
+                            <td>Marketing, Sales, Morale, Energy, Performance (short-term), Confidence, Economy</td>
+                            <td>Sales Managers, HR Professionals, Coaches, Doctors, Government Officials, Personal Development Gurus</td>
+                            <td><strong>To increase or uplift something, often quickly or significantly, especially related to energy, morale, or output.</strong> Implies providing a surge or impetus to elevate something to a higher level. Can be a temporary or sustained increase. <br> <em>Examples: Boost sales, boost team morale, boost immune system, boost confidence.</em></td>
+                        </tr>
+                        <tr>
+                            <td><strong>Get Better</strong></td>
+                            <td>Health, Personal Feelings, Informal Situations, General Circumstances, Basic Skills</td>
+                            <td>Everyday individuals in casual conversation, Friends, Family, Healthcare Patients</td>
+                            <td><strong>Informal way to say something is improving, recovering, or becoming more agreeable.</strong> Primarily used for personal health, feelings, or general, often unplanned, positive changes. It's less formal and precise than 'improve' and typically doesn't imply intentional or professional effort. <br> <em>Examples: I hope you get better soon, the weather is getting better, my mood is getting better.</em></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="get-better-real-world" class="py-12 md:py-20 bg-gray-50 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">In Daily Life: Practical Examples of 'Get Better' 🌐</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">Explore how 'get better' is commonly used in informal and personal contexts, focusing on general improvement or recovery.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="get-better-health">Health ❤️‍🩹</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="get-better-personal">Personal Feelings 😊</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="get-better-situation">General Situations ☁️</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="get-better-skills">Informal Skills 🎯</button>
+            </div>
+            
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg max-w-6xl mx-auto">
+                <div id="content-get-better-health" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Health: Recovery and Well-being 🩺</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Wishing Well:</strong> "I hope you <span class="highlight-word">get better</span> soon after your cold." (Espero que você melhore logo depois do seu resfriado.) 🤧</li>
+                        <li><strong>Doctor's Visit:</strong> "The doctor said his condition is <span class="highlight-word">getting better</span> with the new medication." (O médico disse que a condição dele está <span class="highlight-word">melhorando</span> com o novo medicamento.) 💊</li>
+                        <li><strong>Recovery:</strong> "She's slowly <span class="highlight-word">getting better</span> after her surgery." (Ela está lentamente <span class="highlight-word">melhorando</span> depois da cirurgia dela.) 🙏</li>
+                    </ul>
+                </div>
+                <div id="content-get-better-personal" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Personal Feelings: Mood and Outlook 😊</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Encouragement:</strong> "Don't worry, things will <span class="highlight-word">get better</span>." (Não se preocupe, as coisas vão <span class="highlight-word">melhorar</span>.) ☀️</li>
+                        <li><strong>Mood Change:</strong> "I felt sad this morning, but my mood is <span class="highlight-word">getting better</span> now." (Eu me senti triste esta manhã, but my mood is <span class="highlight-word">melhorando</span> agora.) 😄</li>
+                        <li><strong>Outlook:</strong> "With time and effort, your confidence will <span class="highlight-word">get better</span>." (Com tempo e esforço, sua confiança vai <span class="highlight-word">melhorar</span>.) ✨</li>
+                    </ul>
+                </div>
+                <div id="content-get-better-situation" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">General Situations: Weather and Circumstances ☁️</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Weather Forecast:</strong> "The weather is <span class="highlight-word">getting better</span> for the weekend." (O tempo está <span class="highlight-word">melhorando</span> para o fim de semana.) 🌈</li>
+                        <li><strong>Traffic Report:</strong> "The traffic is finally <span class="highlight-word">getting better</span> after the accident." (O tráfego está finalmente <span class="highlight-word">melhorando</span> depois do acidente.) 🚗💨</li>
+                        <li><strong>Overall Circumstance:</strong> "The economic situation is slowly <span class="highlight-word">getting better</span>." (A situação econômica está lentamente <span class="highlight-word">melhorando</span>.) 📊</li>
+                    </ul>
+                </div>
+                <div id="content-get-better-skills" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Informal Skills: Practice and Improvement 🎯</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Learning a Hobby:</strong> "My painting skills are <span class="highlight-word">getting better</span> with every class." (Minhas habilidades de pintura estão <span class="highlight-word">melhorando</span> a cada aula.) 🎨</li>
+                        <li><strong>Sports:</strong> "He's really <span class="highlight-word">getting better</span> at basketball." (Ele está realmente <span class="highlight-word">melhorando</span> no basquete.) 🏀</li>
+                        <li><strong>Everyday Task:</strong> "I'm <span class="highlight-word">getting better</span> at baking bread, it's less burnt now!" (Estou <span class="highlight-word">melhorando</span> em assar pão, está menos queimado agora!) 🍞</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="get-better-collocations" class="py-12 md:py-20 bg-gray-100 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Collocations with 'Get Better' 😊</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">These informal phrases demonstrate how 'get better' is used in everyday conversation to describe improvement, recovery, or positive changes in circumstances.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+                <ul class="list-disc list-inside space-y-4 text-gray-700">
+                    <li><strong>Get better soon:</strong> A common wish for someone who is ill or recovering.
+                        <p class="ml-4 italic text-gray-600">Example: "I heard you're not feeling well; I hope you <span class="highlight-word">get better soon</span>!"</p>
+                    </li>
+                    <li><strong>Get better at (something):</strong> To improve one's skill or proficiency in a particular activity.
+                        <p class="ml-4 italic text-gray-600">Example: "She's been practicing every day to <span class="highlight-word">get better at playing the piano</span>."</p>
+                    </li>
+                    <li><strong>Things are getting better:</strong> Refers to a general improvement in a situation or circumstances.
+                        <p class="ml-4 italic text-gray-600">Example: "After a tough year, it seems like <span class="highlight-word">things are getting better</span> for the company."</p>
+                    </li>
+                    <li><strong>Weather is getting better:</strong> Describes an improvement in weather conditions.
+                        <p class="ml-4 italic text-gray-600">Example: "The rain has stopped, and the <span class="highlight-word">weather is getting better</span> now."</p>
+                    </li>
+                    <li><strong>Health is getting better:</strong> Indicates recovery or improvement in one's physical or mental well-being.
+                        <p class="ml-4 italic text-gray-600">Example: "His <span class="highlight-word">health is getting better</span> steadily after the treatment."</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+
+        <section id="real-world" class="py-12 md:py-20 bg-gray-50 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">In Daily Life: Practical Examples of 'Improve' & 'Improvement' 🌐</h2>
+                <p class="mt-4 max-w-3xl mx-auto text-lg text-gray-600">See how 'improve' and 'improvement' are used in news, business communications, and general contexts, demonstrating progress and optimization.</p>
+            </div>
+
+            <div class="flex flex-wrap justify-center gap-2 md:gap-4 mb-8">
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="improve-business">Business 💼</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="improve-education">Education 🎓</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="improve-health">Health ❤️‍🩹</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="improve-technology">Technology 💻</button>
+                <button class="tab-button px-4 py-2 text-sm md:text-base font-semibold rounded-full bg-white shadow" data-category="improve-personal">Personal Life 😊</button>
+            </div>
+            
+            <div class="bg-white p-6 md:p-8 rounded-xl shadow-lg max-w-6xl mx-auto">
+                <div id="content-improve-business" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Business: Efficiency and Growth 📈</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Annual Report:</strong> "The company plans to <span class="highlight-word">improve</span> its market share by launching new products." (A empresa planeja melhorar sua fatia de mercado lançando novos produtos.) 🚀</li>
+                        <li><strong>Internal Communication:</strong> "We expect significant <span class="highlight-word">improvement</span> in team collaboration after the new training program." (Esperamos uma melhoria significativa na colaboração da equipe após o novo programa de treinamento.) 🤝</li>
+                        <li><strong>Strategy Meeting:</strong> "Our goal is to <span class="highlight-word">improve</span> customer satisfaction scores by year-end." (Nosso objetivo é melhorar os índices de satisfação do cliente até o final do ano.) ⭐</li>
+                    </ul>
+                </div>
+                <div id="content-improve-education" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Education: Performance and Learning 📚</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>School Report:</strong> "John needs to <span class="highlight-word">improve</span> his grades in mathematics." (John precisa melhorar suas notas em matemática.) 📊</li>
+                        <li><strong>Parent-Teacher Meeting:</strong> "The school board is committed to continuous <span class="highlight-word">improvement</span> in teaching methodologies." (O conselho escolar está comprometido com a melhoria contínua nas metodologias de ensino.) 🧑‍🏫</li>
+                        <li><strong>Study Tip:</strong> "Consistent practice will help you <span class="highlight-word">improve</span> your language skills." (A prática consistente vai te ajudar a melhorar suas habilidades linguísticas.) 🗣️</li>
+                    </ul>
+                </div>
+                <div id="content-improve-health" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Health: Well-being and Recovery 🩺</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Doctor's Visit:</strong> "Eating healthy and exercising regularly can <span class="highlight-word">improve</span> your overall health." (Comer de forma saudável e se exercitar regularmente pode melhorar sua saúde geral.) 🍎</li>
+                        <li><strong>Medical Report:</strong> "The patient showed a steady <span class="highlight-word">improvement</span> after the treatment." (O paciente mostrou uma melhoria constante após o tratamento.) 💪</li>
+                        <li><strong>Public Health Campaign:</strong> "Small lifestyle changes can lead to big <span class="highlight-word">improvements</span> in quality of life." (Pequenas mudanças no estilo de vida podem levar a grandes melhorias na qualidade de vida.) 🌱</li>
+                    </ul>
+                </div>
+                <div id="content-improve-technology" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Technology: Performance and Innovation 💻</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Software Update:</strong> "The new update aims to <span class="highlight-word">improve</span> system security and speed." (A nova atualização visa melhorar a segurança e a velocidade do sistema.) 🔒</li>
+                        <li><strong>Product Launch:</strong> "User feedback led to several key <span class="highlight-word">improvements</span> in the new version." (O feedback dos usuários levou a várias melhorias chave na nova versão.) 🆕</li>
+                        <li><strong>Tech Article:</strong> "AI advancements continue to <span class="highlight-word">improve</span> data processing capabilities." (Os avanços da IA continuam a melhorar as capacidades de processamento de dados.) 🧠</li>
+                    </ul>
+                </div>
+                <div id="content-improve-personal" class="content-section">
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Personal Life: Skills and Personal Growth 🌱</h3>
+                    <ul class="list-disc list-inside space-y-3 text-gray-700">
+                        <li><strong>Self-help:</strong> "To <span class="highlight-word">improve</span> your concentration, try meditation." (Para melhorar sua concentração, tente meditação.) 🧘</li>
+                        <li><strong>Conversation:</strong> "I've noticed a great <span class="highlight-word">improvement</span> in your cooking skills!" (Notei uma grande melhoria em suas habilidades culinárias!) 🍳</li>
+                        <li><strong>Planning:</strong> "Setting small, achievable goals can help you <span class="highlight-word">improve</span> your productivity." (Estabelecer metas pequenas e alcançáveis pode te ajudar a melhorar sua produtividade.) ✅</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <section id="improve-collocations" class="py-12 md:py-20 bg-gray-100 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Collocations with 'Improve' 📈</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">These common phrases illustrate how 'improve' is used to express general betterment, progress, or making something better in quality or quantity.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+                <ul class="list-disc list-inside space-y-4 text-gray-700">
+                    <li><strong>Improve significantly / dramatically:</strong> To make a very large or noticeable positive change.
+                        <p class="ml-4 italic text-gray-600">Example: "Her grades <span class="highlight-word">improved significantly</span> after she hired a tutor."</p>
+                    </li>
+                    <li><strong>Improve steadily / gradually:</strong> To make consistent and slow progress over time.
+                        <p class="ml-4 italic text-gray-600">Example: "The patient's condition <span class="highlight-word">improved steadily</span> over several weeks."</p>
+                    </li>
+                    <li><strong>Improve quality / efficiency:</strong> To make something better in terms of its standard or its ability to operate effectively without waste.
+                        <p class="ml-4 italic text-gray-600">Example: "We aim to <span class="highlight-word">improve the quality</span> of our products and the <span class="highlight-word">efficiency</span> of our processes."</p>
+                    </li>
+                    <li><strong>Improve communication:</strong> To make interactions clearer, more effective, and reduce misunderstandings.
+                        <p class="ml-4 italic text-gray-600">Example: "Better tools will help <span class="highlight-word">improve team communication</span>."</p>
+                    </li>
+                    <li><strong>Improve public services:</strong> To make services provided by the government better for citizens.
+                        <p class="ml-4 italic text-gray-600">Example: "The new reforms are designed to <span class="highlight-word">improve public services</span>."</p>
+                    </li>
+                    <li><strong>Improve living conditions:</strong> To make the environment or circumstances in which people live better.
+                        <p class="ml-4 italic text-gray-600">Example: "The charity works to <span class="highlight-word">improve living conditions</span> in developing countries."</p>
+                    </li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="llm-feature" class="py-12 md:py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Sentence Enhancer ✨</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600 golden-text">Want to enhance your English sentences using 'improve' or 'improvement' more effectively? Type a sentence below and our AI will suggest improvements!</p>
+            </div>
+            <div class="max-w-xl mx-auto bg-white p-6 rounded-xl shadow-lg">
+                <textarea id="sentence-input-llm" class="w-full p-3 border border-gray-300 rounded-md focus:ring-2 focus:ring-blue-400 focus:border-transparent" rows="4" placeholder="Enter your sentence here (e.g., 'My grades got better')."></textarea>
+                <button id="enhance-button" class="w-full mt-4 bg-blue-600 text-white p-3 rounded-md font-semibold hover:bg-blue-700 transition-colors">Enhance Sentence ✨</button>
+                <div id="loading-indicator" class="hidden mt-4 text-center text-blue-500 font-medium">Loading...</div>
+                <div id="enhanced-output" class="mt-6 p-4 border border-dashed border-gray-200 rounded-md min-h-[80px] bg-gray-50">
+                    <p class="text-gray-400">Improvement suggestions will appear here.</p>
+                </div>
+            </div>
+        </section>
+
+        <section id="summary" class="py-12 md:py-20">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Importance of 'Improve' and 'Improvement' in Communication 📊</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600 golden-text">This table summarizes the roles of 'improve' and 'improvement' in conveying ideas of progress, enhancement, and development, highlighting their relevance in professional and technical communication.</p>
+            </div>
+            <div class="overflow-x-auto max-w-4xl mx-auto bg-white rounded-lg shadow-lg">
+                <table class="w-full summary-table">
+                    <thead>
+                        <tr>
+                            <th>Aspect</th>
+                            <th>'Improve' (Verb)</th>
+                            <th>'Improvement' (Noun)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Main Function</strong></td>
+                            <td>Expresses the action of making something better.</td>
+                            <td>Refers to the act of betterment or the result of improvement.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Common Contexts</strong></td>
+                            <td>Business, technology, education, performance, quality, efficiency.</td>
+                            <td>Reports, progress, advancements, goals, health (recovery).</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Tone/Formality</strong></td>
+                            <td>More formal and professional than "get better".</td>
+                            <td>Essencial for formal and technical communication.</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Example Usage</strong></td>
+                            <td>"We must <span class="highlight-word">improve</span> our sales strategy."</td>
+                            <td>"There has been a significant <span class="highlight-word">improvement</span> in data accuracy."</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <section id="exercises" class="py-12 md:py-20 bg-gray-50 rounded-xl">
+            <div class="text-center mb-12">
+                <h2 class="text-3xl md:text-4xl font-bold text-gray-800">Exercises: Test your knowledge! 🧠✍️</h2>
+                <p class="mt-4 max-w-2xl mx-auto text-lg text-gray-600">It's time to practice! Complete the exercises below to solidify your understanding of the different verbs for improvement.</p>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md mb-8">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-4">Exercise 1: Translation (Portuguese to English) 🇧🇷➡️🇬🇧</h3>
+                <p class="mb-4 text-gray-700">Translate the following sentences into English, using the most appropriate verb for improvement ('improve', 'enhance', 'optimize', 'streamline', 'boost', 'get better').</p>
+                
+                <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                    <li>
+                        <p>1. Eles estão buscando melhorias na qualidade do produto.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>They are seeking <span class="font-semibold">improvements</span> in product quality.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>2. Precisamos melhorar a comunicação interna.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>We need to <span class="font-semibold">improve</span> internal communication.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>3. Houve uma melhoria notável em seu desempenho.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>There has been a remarkable <span class="font-semibold">improvement</span> in his performance.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>4. Como podemos otimizar a experiência do cliente?</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>How can we <span class="font-semibold">optimize</span> the customer experience?</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>5. O novo software trará grandes melhorias.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>The new software will bring great <span class="font-semibold">improvements</span>.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>6. Precisamos simplificar o processo de aprovação de projetos.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>We need to <span class="font-semibold">streamline</span> the project approval process.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>7. A nova campanha de marketing vai impulsionar as vendas.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>The new marketing campaign will <span class="font-semibold">boost</span> sales.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>8. Espero que você melhore logo após a gripe.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>I hope you <span class="font-semibold">get better</span> soon after the flu.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>9. Aumentar a segurança dos dados vai aprimorar a confiança do cliente.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>Increasing data security will <span class="font-semibold">enhance</span> customer trust.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>10. Eles estão trabalhando para otimizar o desempenho do servidor.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>They are working to <span class="font-semibold">optimize</span> server performance.</p>
+                            </div>
+                        </details>
+                    </li>
+                </ol>
+            </div>
+
+            <div class="max-w-4xl mx-auto bg-white p-6 rounded-lg shadow-md">
+                <h3 class="text-2xl font-semibold text-blue-600 mb-4">Exercício 2: Fill in the Blanks ✍️</h3>
+                <p class="mb-4 text-gray-700">Preencha as lacunas com o verbo mais apropriado ('improve', 'enhance', 'optimize', 'streamline', 'boost', 'get better') na forma correta.</p>
+                
+                <ol class="list-decimal list-inside space-y-4 text-gray-700">
+                    <li>
+                        <p>1. We are constantly looking for ways to _____ our services.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>We are constantly looking for ways to <span class="font-semibold">improve</span> our services.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>2. The new policy led to a significant _____ in employee morale.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>The new policy led to a significant <span class="font-semibold">improvement</span> in employee morale.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>3. Reading regularly can _____ your vocabulary.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>Reading regularly can <span class="font-semibold">improve</span> your vocabulary.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>4. The latest update includes several performance _____.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>The latest update includes several performance <span class="font-semibold">improvements</span>.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>5. How do you plan to _____ your public speaking skills?</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>How do you plan to <span class="font-semibold">improve</span> your public speaking skills?</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>6. Automating these tasks will _____ our workflow considerably.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>Automating these tasks will <span class="font-semibold">streamline</span> our workflow considerably.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>7. We need to _____ the website's loading speed for a better user experience.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>We need to <span class="font-semibold">optimize</span> the website's loading speed for a better user experience.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>8. Getting more sleep can greatly _____ your overall well-being.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>Getting more sleep can greatly <span class="font-semibold">enhance</span> your overall well-being.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>9. The coach is trying to _____ the team's confidence before the big game.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>The coach is trying to <span class="font-semibold">boost</span> the team's confidence before the big game.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>10. Her health has been steadily _____ since she started the new treatment.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>Her health has been steadily <span class="font-semibold">getting better</span> since she started the new treatment.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>11. The company aims to _____ production efficiency by implementing new robotics.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>The company aims to <span class="font-semibold">optimize</span> production efficiency by implementing new robotics.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>12. We implemented a new system to _____ the customer feedback process.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>We implemented a new system to <span class="font-semibold">streamline</span> the customer feedback process.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>13. A strong online presence can _____ a business's visibility.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>A strong online presence can <span class="font-semibold">boost</span> a business's visibility.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>14. The software update is designed to _____ security features.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>The software update is designed to <span class="font-semibold">enhance</span> security features.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>15. After a long illness, he is finally starting to _____.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>After a long illness, he is finally starting to <span class="font-semibold">get better</span>.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>16. There's been a noticeable _____ in service quality since the new management took over.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>There's been a noticeable <span class="font-semibold">improvement</span> in service quality since the new management took over.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>17. We need to _____ our communication channels to avoid misunderstandings.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>We need to <span class="font-semibold">improve</span> our communication channels to avoid misunderstandings.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>18. Regular exercise will _____ your physical stamina.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>Regular exercise will <span class="font-semibold">enhance</span> your physical stamina.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>19. By automating repetitive tasks, we can _____ productivity.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>By automating repetitive tasks, we can <span class="font-semibold">optimize</span> productivity.</p>
+                            </div>
+                        </details>
+                    </li>
+                    <li>
+                        <p>20. The company hopes to _____ profit margins through cost-cutting measures.</p>
+                        <details class="mt-2">
+                            <summary class="cursor-pointer text-blue-600 hover:underline">Show Answer</summary>
+                            <div class="exercise-answer">
+                                <p>The company hopes to <span class="font-semibold">improve</span> profit margins through cost-cutting measures.</p>
+                            </div>
+                        </details>
+                    </li>
+                </ol>
+            </div>
+        </section>
+        
+    </main>
+
+    <footer class="bg-gray-800 text-white">
+        <div class="container mx-auto py-6 px-4 sm:px-6 lg:px-8 text-center text-sm">
+            <p>&copy; 2024 English Guide. All rights reserved.</p>
+            <p class="mt-2">Created by Teacher Daby</p>
+        </div>
+    </footer>
+
+    <script>
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // Highlight active nav link on scroll
+        const navLinks = document.querySelectorAll('.nav-link');
+        const sections = document.querySelectorAll('main > section');
+
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(section => {
+                const sectionTop = section.offsetTop;
+                if (pageYOffset >= sectionTop - 100) { 
+                    current = section.getAttribute('id');
+                }
+            });
+
+            navLinks.forEach(link => {
+                link.classList.remove('active');
+                if (link.getAttribute('href').includes(current)) {
+                    link.classList.add('active');
+                }
+            });
+        });
+
+        // Tab functionality for Real-World Applications
+        const tabButtons = document.querySelectorAll('.tab-button');
+        const contentSections = document.querySelectorAll('.content-section');
+
+        function updateContent(category) {
+            tabButtons.forEach(button => {
+                // Determine which real-world section the button belongs to
+                const parentSectionId = button.closest('section')?.id;
+                const buttonCategoryPrefix = parentSectionId ? parentSectionId.split('-')[0] : '';
+
+                if (button.dataset.category === category) {
+                    button.classList.add('active');
+                } else {
+                    button.classList.remove('active');
+                }
+            });
+
+            contentSections.forEach(section => {
+                if (section.id === `content-${category}`) {
+                    section.classList.add('active');
+                } else {
+                    section.classList.remove('active');
+                }
+            });
+        }
+        
+        tabButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                updateContent(button.dataset.category);
+            });
+        });
+
+        // Initialize with default active tabs
+        document.addEventListener('DOMContentLoaded', () => {
+            // Default active tab for Boost examples
+            const defaultBoostTab = document.querySelector('#boost-real-world .tab-button[data-category="boost-business"]');
+            if (defaultBoostTab) {
+                updateContent('boost-business');
+            }
+            // Default active tab for Enhance examples
+            const defaultEnhanceTab = document.querySelector('#enhance-real-world .tab-button[data-category="enhance-business"]');
+            if (defaultEnhanceTab) {
+                updateContent('enhance-business');
+            }
+            // Default active tab for Optimize examples
+            const defaultOptimizeTab = document.querySelector('#optimize-real-world .tab-button[data-category="optimize-business"]');
+            if (defaultOptimizeTab) {
+                updateContent('optimize-business');
+            }
+            // Default active tab for Streamline examples
+            const defaultStreamlineTab = document.querySelector('#streamline-real-world .tab-button[data-category="streamline-business"]');
+            if (defaultStreamlineTab) {
+                updateContent('streamline-business');
+            }
+            // Default active tab for Get Better examples
+            const defaultGetBetterTab = document.querySelector('#get-better-real-world .tab-button[data-category="get-better-health"]');
+            if (defaultGetBetterTab) {
+                updateContent('get-better-health');
+            }
+            // Default active tab for Improve examples
+            const defaultImproveTab = document.querySelector('#real-world .tab-button[data-category="improve-business"]');
+            if (defaultImproveTab) {
+                updateContent('improve-business');
+            }
+        });
+
+        // LLM Feature Script
+        document.getElementById('enhance-button').addEventListener('click', async () => {
+            const inputSentence = document.getElementById('sentence-input-llm').value.trim();
+            const loadingIndicator = document.getElementById('loading-indicator');
+            const enhancedOutput = document.getElementById('enhanced-output');
+
+            if (!inputSentence) {
+                enhancedOutput.innerHTML = '<p class="text-red-500">Please enter a sentence to enhance.</p>';
+                return;
+            }
+
+            loadingIndicator.classList.remove('hidden');
+            enhancedOutput.innerHTML = ''; 
+
+            try {
+                const prompt = `Rephrase the following sentence to sound more professional or suitable for contexts related to "improvement" or "improving", using 'improve' or 'improvement' where appropriate. Provide 2-3 alternative phrasings in Portuguese, followed by their English translations. Original sentence: "${inputSentence}"`;
+                
+                let chatHistory = [];
+                chatHistory.push({ role: "user", parts: [{ text: prompt }] });
+
+                const payload = { contents: chatHistory };
+                const apiKey = ""; 
+                const apiUrl = `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.0-flash:generateContent?key=${apiKey}`;
+
+                const response = await fetch(apiUrl, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify(payload)
+                });
+
+                const result = await response.json();
+
+                if (result.candidates && result.candidates.length > 0 &&
+                    result.candidates[0].content && result.candidates[0].content.parts &&
+                    result.candidates[0].content.parts.length > 0) {
+                    const text = result.candidates[0].content.parts[0].text;
+                    enhancedOutput.innerHTML = `<p class="font-semibold mb-2">Original: "${inputSentence}"</p><p class="whitespace-pre-wrap">${text}</p>`;
+                } else {
+                    enhancedOutput.innerHTML = '<p class="text-red-500">Could not generate suggestions. Please try again.</p>';
+                }
+
+            } catch (error) {
+                console.error("Error calling Gemini API:", error);
+                enhancedOutput.innerHTML = `<p class="text-red-500">An error occurred: ${error.message}. Please try again.</p>`;
+            } finally {
+                loadingIndicator.classList.add('hidden');
+            }
+        });
+    </script>
+</body>
+</html>
